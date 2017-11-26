@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>LazyLoad</title>
+	<link rel="stylesheet" href="css/micss.css">
+</head>
+<body>
+	<br>
+	<div class="container">
+		
+		<!--
+			Cambiamos el atributo src por data-original
+		-->
+		<img class="lazy" data-original="img/1.jpg" alt="dungeon">
+		<img class="lazy" data-original="img/2.jpg" alt="dungeon">
+		<img class="lazy" data-original="img/3.jpg" alt="dungeon">
+		<img class="lazy" data-original="img/4.jpg" alt="dungeon">
+		<img class="lazy" data-original="img/5.jpg" alt="dungeon">
+
+	</div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("img.lazy").lazyload({
+				threshold : 10, 
+				/*pixeles a los que tiene que estar para que empiece la carga*/
+				effect: 'fadeIn'
+			});
+			
+		});
+	</script>
+</body>
+</html>
